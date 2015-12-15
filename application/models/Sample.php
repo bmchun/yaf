@@ -9,7 +9,10 @@ class SampleModel {
     }   
     
     public function selectSample() {
-        return 'Hello World!';
+        define("APPLICATION_PATH",realpath(dirname(__FILE__) . '/../'));
+        $app = new \Yaf\Application(APPLICATION_PATH . "/conf/application.ini" , ini_get('yaf.environ'));
+        $con = \Yaf\Application::app()->getConfig();
+        return $con;
     }
 
     public function insertSample($arrInfo) {
