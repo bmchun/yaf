@@ -30,7 +30,8 @@ class IndexController extends Yaf_Controller_Abstract {
 
     public function testAction(){
         $fn = $this->getRequest()->getQuery("get", "default value");
-        $this->getView->assign("name",$fn);
+        $id = $_GET['id'];
+        $this->getView->assign("name",$id);
 
         return TRUE;
     }
